@@ -5,6 +5,7 @@
   <test name="Login">
     <classes>
       <class name="tests.LoginTest"/>
+      <class name="tests.LoginNegativeTest"/>
     </classes>
   </test>
 

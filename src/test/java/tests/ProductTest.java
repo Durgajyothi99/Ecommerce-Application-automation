@@ -15,13 +15,11 @@ import pages.ProductPage;
 
 public class ProductTest extends BaseTest {
 	
-	@BeforeMethod
-	public void loginBeforeEachTest() {
-	    LoginPage loginPage = new LoginPage(driver);
-	    loginPage.login("standard_user", "secret_sauce");
-	}
-	@Test
+	
+	@Test(groups = {"smoke"})
     public void verifyProductNameAndPrice() {
+		    LoginPage loginPage = new LoginPage(driver);
+		    loginPage.login("standard_user", "secret_sauce");
     
         ProductPage productPage = new ProductPage(driver);
 
@@ -29,9 +27,10 @@ public class ProductTest extends BaseTest {
         Assert.assertEquals(productPage.getFirstProductPrice(), "$29.99");
     }
 
-    @Test
+    @Test(groups = {"smoke","regression"})
     public void verifyProductDetailsPage() {
-
+    	 LoginPage loginPage = new LoginPage(driver);
+ 	    loginPage.login("standard_user", "secret_sauce");
         ProductPage productPage = new ProductPage(driver);
 
         productPage.clickFirstProduct();
@@ -39,9 +38,10 @@ public class ProductTest extends BaseTest {
         Assert.assertFalse(productPage.getProductDetailDescription().isEmpty(), "Description should be visible");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void sortProductsByPriceLowToHigh() {
-    
+    	 LoginPage loginPage = new LoginPage(driver);
+ 	    loginPage.login("standard_user", "secret_sauce");
         ProductPage productPage = new ProductPage(driver);
 
         productPage.sortBy("Price (low to high)");
@@ -51,8 +51,10 @@ public class ProductTest extends BaseTest {
         Assert.assertEquals(prices, sorted, "Prices not sorted low to high");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void sortProductsByPriceHighToLow() {
+    	 LoginPage loginPage = new LoginPage(driver);
+ 	    loginPage.login("standard_user", "secret_sauce");
         ProductPage productPage = new ProductPage(driver);
 
         productPage.sortBy("Price (high to low)");
@@ -62,8 +64,10 @@ public class ProductTest extends BaseTest {
         Assert.assertEquals(prices, sorted, "Prices not sorted high to low");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void sortProductsByNameAZ() {
+    	 LoginPage loginPage = new LoginPage(driver);
+ 	    loginPage.login("standard_user", "secret_sauce");
         ProductPage productPage = new ProductPage(driver);
 
         productPage.sortBy("Name (A to Z)");
@@ -73,8 +77,10 @@ public class ProductTest extends BaseTest {
         Assert.assertEquals(names, sorted, "Names not sorted A to Z");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void sortProductsByNameZA() {
+    	 LoginPage loginPage = new LoginPage(driver);
+ 	    loginPage.login("standard_user", "secret_sauce");
     	ProductPage productPage = new ProductPage(driver);
 
         productPage.sortBy("Name (Z to A)");
@@ -86,6 +92,8 @@ public class ProductTest extends BaseTest {
 
     @Test
     public void verifyCartIconUpdates() {
+    	 LoginPage loginPage = new LoginPage(driver);
+ 	    loginPage.login("standard_user", "secret_sauce");
     
         ProductPage productPage = new ProductPage(driver);
 
@@ -93,8 +101,10 @@ public class ProductTest extends BaseTest {
         Assert.assertEquals(productPage.getCartCount(), "1", "Cart icon should show count 1");
     }
 
-    @Test
+    @Test(groups = {"smoke","regression"})
     public void addMultipleProductsToCartTest() {
+    	 LoginPage loginPage = new LoginPage(driver);
+ 	    loginPage.login("standard_user", "secret_sauce");
     	ProductPage productPage = new ProductPage(driver);
         List<String> productIds = Arrays.asList("sauce-labs-backpack", "sauce-labs-bike-light");
         productPage.addMultipleProductsToCart(productIds);
@@ -103,15 +113,17 @@ public class ProductTest extends BaseTest {
         Assert.assertEquals(cartCount, String.valueOf(productIds.size()), "Cart count should match number of products added");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void removeProductFromCartTest() {
+    	 LoginPage loginPage = new LoginPage(driver);
+ 	    loginPage.login("standard_user", "secret_sauce");
   
         ProductPage productPage = new ProductPage(driver);
 
         productPage.addProductToCart("sauce-labs-backpack");
         productPage.removeProductFromCart("sauce-labs-backpack");
 
-        // Re-locate the button after removal (to avoid stale element)
+        // Relocate the button after removal to avoid stale element
         String buttonText = driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).getText();
         Assert.assertEquals(buttonText, "Add to cart", "Button should revert back to 'Add to cart'");
     }

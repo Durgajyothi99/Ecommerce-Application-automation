@@ -7,7 +7,7 @@ import pages.*;
 
 public class CheckoutTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"smoke"})
     public void checkoutWithValidInfoTest() {
         new LoginPage(driver).login("standard_user", "secret_sauce");
 
@@ -25,7 +25,7 @@ public class CheckoutTest extends BaseTest {
         Assert.assertEquals(checkoutPage.getConfirmationMessage(), "Thank you for your order!");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void checkoutWithMissingInfoTest() {
         new LoginPage(driver).login("standard_user", "secret_sauce");
 
@@ -91,7 +91,7 @@ public class CheckoutTest extends BaseTest {
         Assert.assertTrue(checkoutPage.isErrorVisible(), "Missing postal code should show error");
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void verifyOrderSummaryTest() {
         new LoginPage(driver).login("standard_user", "secret_sauce");
         ProductPage productPage = new ProductPage(driver);

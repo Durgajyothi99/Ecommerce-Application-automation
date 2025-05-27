@@ -9,7 +9,7 @@ import pages.CartPage;
 
 public class CartTest extends BaseTest {
 
-    @Test
+    @Test(groups = {"regression"})
     public void verifyCartContentsTest() {
         new LoginPage(driver).login("standard_user", "secret_sauce");
         ProductPage productPage = new ProductPage(driver);
@@ -21,7 +21,7 @@ public class CartTest extends BaseTest {
         Assert.assertEquals(cartPage.getCartItemName(), "Sauce Labs Backpack", "Cart item mismatch");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void removeItemFromCartTest() {
         new LoginPage(driver).login("standard_user", "secret_sauce");
         ProductPage productPage = new ProductPage(driver);
@@ -36,7 +36,7 @@ public class CartTest extends BaseTest {
         Assert.assertFalse(cartBadgeVisible, "Cart badge should be gone after removing item");
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void proceedToCheckoutTest() {
         new LoginPage(driver).login("standard_user", "secret_sauce");
         ProductPage productPage = new ProductPage(driver);
