@@ -1,0 +1,6 @@
+tests\BaseTest.class
+tests\CartTest.class
+tests\LoginNegativeTest.class
+tests\CheckoutTest.class
+tests\LoginTest.class
+tests\ProductTest.class

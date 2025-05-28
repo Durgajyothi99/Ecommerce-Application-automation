@@ -11,12 +11,40 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td>loginWithInvalidPassword</td>
-<td>&nbsp;</td></tr>
+<td>loginWithValidCredentials</td>
+<td>regression smoke </td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeClass</td>
+</tr>
+<tr>
+<td align='center' colspan='3'>@BeforeMethod</td>
+</tr>
 <tr>
 <td>&nbsp;</td>
-<td>loginWithValidCredentials</td>
+<td>setUp</td>
 <td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@AfterMethod</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>tearDown</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@AfterClass</td>
+</tr>
+<tr>
+<td>tests.LoginNegativeTest</td>
+<td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr>
+<td align='center' colspan='3'>@Test</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>loginWithInvalidPassword</td>
+<td>regression </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>loginWithEmptyUsername</td>
@@ -36,7 +64,8 @@
 <tr>
 <td>&nbsp;</td>
 <td>loginWithInvalidUsername</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>loginWithEmptyPassword</td>
@@ -70,15 +99,18 @@
 <tr>
 <td>&nbsp;</td>
 <td>removeItemFromCartTest</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>verifyCartContentsTest</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>proceedToCheckoutTest</td>
-<td>&nbsp;</td></tr>
+<td>smoke </td>
+</tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
 </tr>
@@ -112,35 +144,43 @@
 <tr>
 <td>&nbsp;</td>
 <td>sortProductsByPriceLowToHigh</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>sortProductsByPriceHighToLow</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>addMultipleProductsToCartTest</td>
-<td>&nbsp;</td></tr>
+<td>regression smoke </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>verifyProductNameAndPrice</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>verifyProductDetailsPage</td>
-<td>&nbsp;</td></tr>
+<td>smoke </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>sortProductsByNameZA</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>verifyProductDetailsPage</td>
+<td>regression smoke </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>removeProductFromCartTest</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>sortProductsByNameAZ</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
 <tr>
 <td align='center' colspan='3'>@BeforeClass</td>
 </tr>
@@ -150,10 +190,6 @@
 <tr>
 <td>&nbsp;</td>
 <td>setUp</td>
-<td>&nbsp;</td></tr>
-<tr>
-<td>&nbsp;</td>
-<td>loginBeforeEachTest</td>
 <td>&nbsp;</td></tr>
 <tr>
 <td align='center' colspan='3'>@AfterMethod</td>
@@ -174,11 +210,13 @@
 <tr>
 <td>&nbsp;</td>
 <td>checkoutWithValidInfoTest</td>
-<td>&nbsp;</td></tr>
+<td>smoke </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>verifyOrderSummaryTest</td>
-<td>&nbsp;</td></tr>
+<td>smoke </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>verifyCheckoutPageTitleTest</td>
@@ -198,7 +236,8 @@
 <tr>
 <td>&nbsp;</td>
 <td>checkoutWithMissingInfoTest</td>
-<td>&nbsp;</td></tr>
+<td>regression </td>
+</tr>
 <tr>
 <td>&nbsp;</td>
 <td>checkoutWithoutLastNameTest</td>

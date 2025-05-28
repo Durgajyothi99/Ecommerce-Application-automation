@@ -31,10 +31,14 @@
       <artifactId>maven-surefire-plugin</artifactId>
       <version>3.1.2</version> 
       <configuration>
-        <suiteXmlFiles>
-          <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> 
-        </suiteXmlFiles>
-      </configuration>
+  <suiteXmlFiles>
+    <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+  </suiteXmlFiles>
+  <systemPropertyVariables>
+    <surefire.suite>${surefire.suite}</surefire.suite>
+  </systemPropertyVariables>
+</configuration>
+
     </plugin>
   </plugins>
 </build>
